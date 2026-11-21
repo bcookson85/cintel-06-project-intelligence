@@ -1,8 +1,8 @@
 # cintel-06-continuous-intelligence
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
-[![CI](https://github.com/denisecase/cintel-06-continuous-intelligence/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/cintel-06-continuous-intelligence/actions/workflows/ci-python-zensical.yml)
-[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/cintel-06-continuous-intelligence/)
+[![CI](https://github.com/bcookson85/cintel-06-project-intelligence/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/bcookson85/cintel-06-project-intelligence/actions/workflows/ci-python-zensical.yml)
+[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://bcookson85.github.io/cintel-06-project-intelligence/)
 
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
 [![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
@@ -13,18 +13,44 @@
 
 ## Project Overview
 
-Author: Denise Case
+**Author:** Brian Cookson
 
-Date: 2026 October
+**Date:** November 2026
 
-This project brings together techniques introduced
-throughout the Continuous Intelligence course.
+This project explores integrated continuous intelligence monitoring
+using Python and Polars as part of the Continuous Intelligence course
+at Northwest Missouri State University.
 
-The goal is to transform system measurements into useful signals,
-identify unusual behavior, and summarize the system's current state.
+The initial objective is to understand and execute Dr. Denise Case's
+original continuous intelligence example, which transforms system
+measurements into analytical signals, detects unusual observations,
+and evaluates overall system health.
 
-The project is configured in
-[pyproject.toml](pyproject.toml).
+### Proposed Customization: Integrated Project Performance Monitoring
+
+My proposed customization will combine the project performance
+monitoring techniques developed throughout previous modules into
+a single continuous intelligence application.
+
+Using synthetic project request response data, the application
+will explore:
+
+- **Signal Design:** Calculate meaningful project performance
+  indicators, including response times and overdue request rates.
+- **Anomaly Detection:** Identify individual project requests
+  with unusually long response times.
+- **Rolling Monitoring:** Track changes in response performance
+  across successive observations.
+- **Drift Detection:** Compare recent response performance against
+  historical baseline measurements.
+- **Integrated Assessment:** Combine these indicators to evaluate
+  overall project responsiveness and identify potential issues.
+
+The goal is to demonstrate how multiple analytical techniques
+can work together to provide a more complete understanding of
+project performance and support informed operational decisions.
+
+The project is configured in [pyproject.toml](pyproject.toml).
 
 ## Data
 
@@ -114,7 +140,7 @@ uv run pytest
 
 ## Project Documentation
 
-The [hosted documentation site](https://denisecase.github.io/cintel-06-continuous-intelligence/)
+The [hosted documentation site][hosted documentation site](https://bcookson85.github.io/cintel-06-project-intelligence/)
 is published using Zensical and GitHub Pages.
 
 The documentation site is used to present the project report,
@@ -127,8 +153,8 @@ This project includes continuous integration and continuous deployment (CI/CD)
 to check project files and publish the docs.
 GitHub Actions include:
 
-- [CI: Python and Documentation Checks](https://github.com/denisecase/cintel-06-continuous-intelligence/actions/workflows/ci-python-zensical.yml)
-- [CD: Documentation Deployment](https://github.com/denisecase/cintel-06-continuous-intelligence/actions/workflows/deploy-zensical.yml)
+- [CI: Python and Documentation Checks](https://github.com/bcookson85/cintel-06-project-intelligence/actions/workflows/ci-python-zensical.yml)
+- [CD: Documentation Deployment](https://github.com/bcookson85/cintel-06-project-intelligence/actions/workflows/deploy-zensical.yml)
 
 ## Developer Reference
 
@@ -213,7 +239,7 @@ testing, documentation, and code quality.
 
 ## Links
 
-- [Hosted Documentation](https://denisecase.github.io/cintel-06-continuous-intelligence/)
+- [Hosted Documentation](https://bcookson85.github.io/cintel-06-project-intelligence/)
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
