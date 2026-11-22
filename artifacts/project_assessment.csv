@@ -1,0 +1,2 @@
+total_observations,total_anomalies,baseline_avg_days,recent_avg_days,response_difference_days,drift_threshold_days,drift_detected,recent_overdue_pct,system_state
+30,8,3.6,7.2,3.6,2.0,true,50.0,DEGRADED

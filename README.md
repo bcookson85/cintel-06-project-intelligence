@@ -1,4 +1,4 @@
-# cintel-06-continuous-intelligence
+# cintel-06-project-intelligence
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
 [![CI](https://github.com/bcookson85/cintel-06-project-intelligence/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/bcookson85/cintel-06-project-intelligence/actions/workflows/ci-python-zensical.yml)
@@ -159,6 +159,64 @@ From a VS Code terminal in the project root:
 ```shell
 uv run python -m cintel.continuous_intelligence
 ```
+
+## Custom Application: Integrated Project Performance Monitoring
+
+This project also includes a custom continuous intelligence application
+that monitors synthetic project request response times.
+
+The application combines signal design, fixed-threshold anomaly detection,
+five-request rolling monitoring, historical baseline comparisons,
+drift detection, and an overall project performance assessment.
+
+The dataset contains 30 synthetic project requests representing
+Planning, Design, and Construction activities.
+
+### Run the Custom Application
+
+From a VS Code terminal in the project root, run:
+
+```powershell
+uv run python -m cintel.project_intelligence
+```
+
+This command reads `data/project_requests.csv` and generates:
+
+- `artifacts/project_signals.csv` - individual response times, overdue flags,
+  anomaly indicators, rolling averages, and rolling overdue percentages.
+- `artifacts/project_assessment.csv` - historical and recent averages,
+  drift results, and the overall project performance classification.
+
+### Generate the Visualization
+
+After running the custom application, execute:
+
+```powershell
+uv run python -m cintel.visualize_project
+```
+
+This creates `docs/images/project_response_monitoring.png`,
+showing individual response times, the five-request rolling average,
+and the seven-day overdue threshold.
+
+### Verified Results
+
+The custom application processed 30 observations and identified
+8 requests exceeding the seven-day threshold.
+
+The historical average was 3.60 days, compared with a recent
+average of 7.20 days. The increase of 3.60 days exceeded the
+configured drift threshold of 2.00 days.
+
+The resulting overall assessment was **DEGRADED**.
+
+### Documentation
+
+The complete analysis, interpretation, limitations, future improvements,
+and embedded visualization are available on the
+[project documentation website](https://bcookson85.github.io/cintel-06-project-intelligence/).
+
+The underlying dataset is synthetic and contains no actual employer data.
 
 ## Run the Reactive App
 
