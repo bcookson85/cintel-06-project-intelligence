@@ -52,6 +52,70 @@ project performance and support informed operational decisions.
 
 The project is configured in [pyproject.toml](pyproject.toml).
 
+### Technical Experiment: Maximum Average Latency Threshold
+
+**Objective:** Investigate how changing the maximum average latency
+threshold affects anomaly detection and overall system assessment.
+
+**Original Configuration:**
+The original application used a maximum average latency threshold
+of 40.0 milliseconds.
+
+With this threshold, the pipeline processed 60 system observations,
+detected 7 anomalies, and classified the overall system as STABLE.
+
+The average latency was approximately 33.71 milliseconds.
+
+**Modification:**
+In `src/cintel/continuous_intelligence.py`, I changed:
+
+`MAX_AVG_LATENCY: Final[float] = 40.0`
+
+to:
+
+`MAX_AVG_LATENCY: Final[float] = 30.0`
+
+**Reason:**
+I wanted to examine how reducing an operational threshold affects
+the sensitivity of an integrated continuous intelligence application.
+
+**Prediction:**
+I predicted that lowering the latency threshold to 30.0 milliseconds
+would change the overall classification from STABLE to DEGRADED
+because the average latency of 33.71 milliseconds would exceed
+the new threshold.
+
+I also expected the number of detected anomalies to increase.
+
+**Actual Results:**
+After rerunning the pipeline, the system classification changed
+from STABLE to DEGRADED.
+
+The number of detected anomalies increased from 7 to 40.
+
+| Measurement | Original | Modified |
+|---|---:|---:|
+| Maximum latency threshold | 40.0 ms | 30.0 ms |
+| Average latency | 33.71 ms | 33.71 ms |
+| Detected anomalies | 7 | 40 |
+| Overall system state | STABLE | DEGRADED |
+
+**Interpretation:**
+The experiment demonstrated that the detection thresholds
+significantly influence the results of continuous intelligence
+monitoring.
+
+Although the underlying observations and average latency remained
+unchanged, reducing the threshold caused 33 additional observations
+to be flagged and changed the overall system classification.
+
+**Conclusion:**
+Operational thresholds should be selected based on meaningful
+performance requirements rather than arbitrary values.
+
+Thresholds set too low may produce excessive alerts, while
+thresholds set too high may overlook important performance changes.
+
 ## Data
 
 The example uses system metrics from `data/`.
